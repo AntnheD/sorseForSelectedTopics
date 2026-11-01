@@ -1,0 +1,63 @@
+{
+  "n_questions": 14,
+  "n_answerable": 12,
+  "n_insufficient_evidence": 2,
+  "answer_rate_on_answerable": 0.5833,
+  "false_abstention_rate": 0.4167,
+  "correct_abstention_rate": 1.0,
+  "abstention_accuracy": 0.6429,
+  "keyword_coverage_mean_over_answered": 0.6429,
+  "keyword_coverage_full_match_rate_over_answerable": 0.3333,
+  "citation_precision_mean": 0.8571,
+  "support_rate_mean": 1.0,
+  "retrieval_hit_rate": 1.0,
+  "mean_seconds_per_question": 3.2466,
+  "split": "val",
+  "retriever": "hybrid",
+  "generator": "hf",
+  "model": "google/flan-t5-base",
+  "relevance_level": "source",
+  "questions_version": "1.0",
+  "settings": {
+    "corpus": {
+      "documents_dir": "data/documents/fastapi",
+      "docs_subdir": "docs",
+      "docs_src_subdir": "docs_src",
+      "chunks_path": "data/processed/chunks.jsonl",
+      "report_path": "data/processed/corpus_report.json",
+      "chunk_size_words": 180,
+      "chunk_overlap_words": 40,
+      "exclude_files": [
+        "_llm-test.md"
+      ],
+      "doc_version": "fastapi/fastapi@5cb6272ed7e3e07eaf6978e1e65b94aca76fa8e0 (2026-11-02)"
+    },
+    "retrieval": {
+      "method": "hybrid",
+      "top_k": 5,
+      "max_per_source": null,
+      "dense_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "artifacts_dir": "artifacts",
+      "bm25_k1": 1.5,
+      "bm25_b": 0.75
+    },
+    "generation": {
+      "generator": "hf",
+      "model": "google/flan-t5-base",
+      "dtype": "float32",
+      "max_new_tokens": 128,
+      "passages_for_generation": 3,
+      "include_code_in_prompt": false,
+      "min_retrieval_score": 0.0229,
+      "min_sentence_support": 0.35,
+      "min_supported_fraction": 0.5
+    },
+    "evaluation": {
+      "questions_path": "data/evaluation/questions.json",
+      "k": 5,
+      "relevance_level": "source",
+      "reports_dir": "reports",
+      "predictions_dir": "reports/predictions"
+    }
+  }
+}

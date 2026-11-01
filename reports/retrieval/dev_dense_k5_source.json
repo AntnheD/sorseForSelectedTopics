@@ -1,0 +1,454 @@
+{
+  "summary": {
+    "n_questions": 8,
+    "k": 5,
+    "relevance_level": "source",
+    "recall@5": 0.875,
+    "hit_rate@5": 0.875,
+    "mrr@5": 0.7292,
+    "top1_accuracy": 0.625,
+    "retriever": "dense",
+    "n_excluded_insufficient_evidence": 0,
+    "mean_query_seconds": 0.0873,
+    "sources_with_multiple_hits": 8,
+    "split": "dev",
+    "questions_version": "1.0",
+    "chunk_size_words": 180,
+    "chunk_overlap_words": 40,
+    "max_per_source": null
+  },
+  "per_question": {
+    "dev-01": {
+      "question": "How do I make a query parameter optional?",
+      "category": "direct",
+      "relevant": [
+        "tutorial/query-params.md"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/query-params.md::002",
+          "source": "tutorial/query-params.md",
+          "section_anchor": "optional-parameters",
+          "score": 0.5221,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/query-params-str-validations.md::001",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "additional-validation",
+          "score": 0.5075,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/query-params-str-validations.md::006",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "alternative-old-query-as-the-default-value",
+          "score": 0.5048,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/query-params-str-validations.md::013",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "required-parameters-and-none",
+          "score": 0.4977,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/query-param-models.md::002",
+          "source": "tutorial/query-param-models.md",
+          "section_anchor": "check-the-docs",
+          "score": 0.4943,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "dev-02": {
+      "question": "If I declare a bool query parameter called short, what does FastAPI do when the client sends ?short=yes?",
+      "category": "direct",
+      "relevant": [
+        "tutorial/query-params.md"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/body.md::010",
+          "source": "tutorial/body.md",
+          "section_anchor": "request-body-path-query-parameters",
+          "score": 0.5566,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/query-params-str-validations.md::013",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "required-parameters-and-none",
+          "score": 0.5565,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "advanced/using-request-directly.md::001",
+          "source": "advanced/using-request-directly.md",
+          "section_anchor": "details-about-the-request-object",
+          "score": 0.5554,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/query-params-str-validations.md::000",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "query-parameters-and-string-validations",
+          "score": 0.5544,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/header-param-models.md::006",
+          "source": "tutorial/header-param-models.md",
+          "section_anchor": "optional-header-parameter-models",
+          "score": 0.5484,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": null,
+      "hit_rate@5": 0.0,
+      "recall@5": 0.0,
+      "mrr@5": 0.0,
+      "top1": 0.0
+    },
+    "dev-03": {
+      "question": "Why must the path operation for /users/me be declared before /users/{user_id}?",
+      "category": "troubleshooting",
+      "relevant": [
+        "tutorial/path-params.md"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/path-params.md::007",
+          "source": "tutorial/path-params.md",
+          "section_anchor": "order-matters",
+          "score": 0.5385,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/path-params.md::016",
+          "source": "tutorial/path-params.md",
+          "section_anchor": "path-parameters-containing-paths",
+          "score": 0.4578,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "advanced/security/oauth2-scopes.md::036",
+          "source": "advanced/security/oauth2-scopes.md",
+          "section_anchor": "check-it",
+          "score": 0.4468,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "advanced/templates.md::005",
+          "source": "advanced/templates.md",
+          "section_anchor": "template-url-for-arguments",
+          "score": 0.4058,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "advanced/security/oauth2-scopes.md::034",
+          "source": "advanced/security/oauth2-scopes.md",
+          "section_anchor": "dependency-tree-and-scopes",
+          "score": 0.4054,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "dev-04": {
+      "question": "How can I restrict a path parameter to a fixed set of allowed values?",
+      "category": "direct",
+      "relevant": [
+        "tutorial/path-params.md"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/path-params.md::008",
+          "source": "tutorial/path-params.md",
+          "section_anchor": "predefined-values",
+          "score": 0.6398,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/path-params.md::011",
+          "source": "tutorial/path-params.md",
+          "section_anchor": "check-the-docs",
+          "score": 0.5449,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/path-params.md::012",
+          "source": "tutorial/path-params.md",
+          "section_anchor": "working-with-python-enumerations",
+          "score": 0.5322,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/path-params-numeric-validations.md::000",
+          "source": "tutorial/path-params-numeric-validations.md",
+          "section_anchor": "path-parameters-and-numeric-validations",
+          "score": 0.5113,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/path-operation-configuration.md::000",
+          "source": "tutorial/path-operation-configuration.md",
+          "section_anchor": "path-operation-configuration",
+          "score": 0.4868,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "dev-05": {
+      "question": "How can I validate a query parameter against a regular expression?",
+      "category": "direct",
+      "relevant": [
+        "tutorial/query-params-str-validations.md"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/query-params-str-validations.md::001",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "additional-validation",
+          "score": 0.5459,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/query-params-str-validations.md::023",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "understand-that-code",
+          "score": 0.5151,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/query-params-str-validations.md::026",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "recap",
+          "score": 0.4692,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/query-params-str-validations.md::010",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "add-regular-expressions",
+          "score": 0.4344,
+          "relevant": true
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/query-params-str-validations.md::021",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "custom-validation",
+          "score": 0.4327,
+          "relevant": true
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "dev-06": {
+      "question": "How do I enable CORS in a FastAPI application?",
+      "category": "direct",
+      "relevant": [
+        "tutorial/cors.md"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "advanced/middleware.md::000",
+          "source": "advanced/middleware.md",
+          "section_anchor": "advanced-middleware",
+          "score": 0.6567,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/cors.md::008",
+          "source": "tutorial/cors.md",
+          "section_anchor": "more-info",
+          "score": 0.6201,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/cors.md::004",
+          "source": "tutorial/cors.md",
+          "section_anchor": "use-corsmiddleware",
+          "score": 0.6027,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "advanced/index.md::000",
+          "source": "advanced/index.md",
+          "section_anchor": "additional-features",
+          "score": 0.5389,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/cors.md::006",
+          "source": "tutorial/cors.md",
+          "section_anchor": "cors-preflight-requests",
+          "score": 0.5371,
+          "relevant": true
+        }
+      ],
+      "first_relevant_rank": 2,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 0.5,
+      "top1": 0.0
+    },
+    "dev-07": {
+      "question": "How do I start a FastAPI app with several worker processes?",
+      "category": "direct",
+      "relevant": [
+        "deployment/server-workers.md"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "deployment/docker.md::035",
+          "source": "deployment/docker.md",
+          "section_anchor": "single-container",
+          "score": 0.7881,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "deployment/docker.md::034",
+          "source": "deployment/docker.md",
+          "section_anchor": "multiple-containers",
+          "score": 0.6689,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "deployment/server-workers.md::006",
+          "source": "deployment/server-workers.md",
+          "section_anchor": "recap",
+          "score": 0.6356,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "deployment/docker.md::029",
+          "source": "deployment/docker.md",
+          "section_anchor": "containers-with-multiple-processes-and-special-cases",
+          "score": 0.6219,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "deployment/docker.md::028",
+          "source": "deployment/docker.md",
+          "section_anchor": "one-process-per-container",
+          "score": 0.6187,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 3,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 0.3333333333333333,
+      "top1": 0.0
+    },
+    "dev-08": {
+      "question": "What is the lifespan parameter of the FastAPI app used for?",
+      "category": "direct",
+      "relevant": [
+        "advanced/events.md"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "advanced/events.md::006",
+          "source": "advanced/events.md",
+          "section_anchor": "alternative-events-deprecated",
+          "score": 0.5422,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "advanced/events.md::002",
+          "source": "advanced/events.md",
+          "section_anchor": "lifespan",
+          "score": 0.5344,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "deployment/versions.md::002",
+          "source": "deployment/versions.md",
+          "section_anchor": "available-versions",
+          "score": 0.5313,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/first-steps.md::023",
+          "source": "tutorial/first-steps.md",
+          "section_anchor": "about-fastapi-cloud",
+          "score": 0.5266,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "deployment/fastapicloud.md::001",
+          "source": "deployment/fastapicloud.md",
+          "section_anchor": "about-fastapi-cloud",
+          "score": 0.5229,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    }
+  }
+}

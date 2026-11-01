@@ -1,0 +1,1700 @@
+{
+  "summary": {
+    "n_questions": 31,
+    "k": 5,
+    "relevance_level": "section",
+    "recall@5": 0.9194,
+    "hit_rate@5": 0.9355,
+    "mrr@5": 0.7484,
+    "top1_accuracy": 0.6452,
+    "retriever": "dense",
+    "n_excluded_insufficient_evidence": 5,
+    "mean_query_seconds": 0.1262,
+    "sources_with_multiple_hits": 28,
+    "split": "test",
+    "questions_version": "1.0",
+    "chunk_size_words": 180,
+    "chunk_overlap_words": 40,
+    "max_per_source": null
+  },
+  "per_question": {
+    "test-01": {
+      "question": "How do I make a query parameter required?",
+      "category": "direct",
+      "relevant": [
+        "tutorial/query-params.md#required-query-parameters"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/query-param-models.md::002",
+          "source": "tutorial/query-param-models.md",
+          "section_anchor": "check-the-docs",
+          "score": 0.5448,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/query-params.md::005",
+          "source": "tutorial/query-params.md",
+          "section_anchor": "required-query-parameters",
+          "score": 0.5192,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/header-params.md::000",
+          "source": "tutorial/header-params.md",
+          "section_anchor": "header-parameters",
+          "score": 0.5155,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/query-params-str-validations.md::001",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "additional-validation",
+          "score": 0.5081,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/cookie-params.md::000",
+          "source": "tutorial/cookie-params.md",
+          "section_anchor": "cookie-parameters",
+          "score": 0.5076,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 2,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 0.5,
+      "top1": 0.0
+    },
+    "test-02": {
+      "question": "How do I declare a path parameter that itself contains a path with slashes, such as a file path?",
+      "category": "direct",
+      "relevant": [
+        "tutorial/path-params.md#path-convertor",
+        "tutorial/path-params.md#path-parameters-containing-paths"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/path-params.md::016",
+          "source": "tutorial/path-params.md",
+          "section_anchor": "path-parameters-containing-paths",
+          "score": 0.6711,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/path-params.md::008",
+          "source": "tutorial/path-params.md",
+          "section_anchor": "predefined-values",
+          "score": 0.6192,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/path-params.md::011",
+          "source": "tutorial/path-params.md",
+          "section_anchor": "check-the-docs",
+          "score": 0.5905,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/path-operation-configuration.md::000",
+          "source": "tutorial/path-operation-configuration.md",
+          "section_anchor": "path-operation-configuration",
+          "score": 0.5725,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/path-params.md::012",
+          "source": "tutorial/path-params.md",
+          "section_anchor": "working-with-python-enumerations",
+          "score": 0.5349,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 0.5,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-03": {
+      "question": "The client sends a query parameter named item-query, which is not a valid Python name. How do I read it?",
+      "category": "troubleshooting",
+      "relevant": [
+        "tutorial/query-params-str-validations.md#alias-parameters"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/query-params.md::000",
+          "source": "tutorial/query-params.md",
+          "section_anchor": "query-parameters",
+          "score": 0.6267,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/query-params-str-validations.md::014",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "query-parameter-list-multiple-values",
+          "score": 0.589,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/query-params-str-validations.md::018",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "alias-parameters",
+          "score": 0.5652,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/query-params-str-validations.md::013",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "required-parameters-and-none",
+          "score": 0.5511,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/query-params.md::002",
+          "source": "tutorial/query-params.md",
+          "section_anchor": "optional-parameters",
+          "score": 0.5401,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 3,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 0.3333333333333333,
+      "top1": 0.0
+    },
+    "test-04": {
+      "question": "How can one query parameter receive several values, like ?q=foo&q=bar?",
+      "category": "direct",
+      "relevant": [
+        "tutorial/query-params-str-validations.md#query-parameter-list-multiple-values"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/query-params-str-validations.md::014",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "query-parameter-list-multiple-values",
+          "score": 0.6106,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/query-params-str-validations.md::006",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "alternative-old-query-as-the-default-value",
+          "score": 0.5302,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/query-params-str-validations.md::007",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "query-as-the-default-value-or-in-annotated",
+          "score": 0.5168,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/query-params-str-validations.md::012",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "required-parameters",
+          "score": 0.5073,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/query-param-models.md::004",
+          "source": "tutorial/query-param-models.md",
+          "section_anchor": "combine-parameter-models",
+          "score": 0.5065,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-05": {
+      "question": "How do I mark a query parameter as deprecated in the API docs without removing it?",
+      "category": "direct",
+      "relevant": [
+        "tutorial/query-params-str-validations.md#deprecating-parameters"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/query-params-str-validations.md::019",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "deprecating-parameters",
+          "score": 0.5679,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/query-param-models.md::002",
+          "source": "tutorial/query-param-models.md",
+          "section_anchor": "check-the-docs",
+          "score": 0.5561,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "index.md::017",
+          "source": "index.md",
+          "section_anchor": "alternative-api-docs-upgrade",
+          "score": 0.5151,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/query-params-str-validations.md::020",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "exclude-parameters-from-openapi",
+          "score": 0.5099,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/query-params-str-validations.md::006",
+          "source": "tutorial/query-params-str-validations.md",
+          "section_anchor": "alternative-old-query-as-the-default-value",
+          "score": 0.4553,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-06": {
+      "question": "How do I pin the FastAPI version in a requirements.txt file?",
+      "category": "direct",
+      "relevant": [
+        "deployment/versions.md#pin-your-fastapi-version"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "deployment/versions.md::001",
+          "source": "deployment/versions.md",
+          "section_anchor": "pin-your-fastapi-version",
+          "score": 0.8246,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "deployment/versions.md::003",
+          "source": "deployment/versions.md",
+          "section_anchor": "about-versions",
+          "score": 0.7287,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "deployment/versions.md::002",
+          "source": "deployment/versions.md",
+          "section_anchor": "available-versions",
+          "score": 0.6271,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "advanced/dataclasses.md::006",
+          "source": "advanced/dataclasses.md",
+          "section_anchor": "version",
+          "score": 0.6041,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "deployment/versions.md::005",
+          "source": "deployment/versions.md",
+          "section_anchor": "about-starlette",
+          "score": 0.5951,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-07": {
+      "question": "How do I require a path parameter item_id to be an integer greater than or equal to 1?",
+      "category": "direct",
+      "relevant": [
+        "tutorial/path-params-numeric-validations.md#number-validations-greater-than-or-equal"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/path-params-numeric-validations.md::005",
+          "source": "tutorial/path-params-numeric-validations.md",
+          "section_anchor": "order-the-parameters-as-you-need-tricks",
+          "score": 0.5838,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/path-params-numeric-validations.md::007",
+          "source": "tutorial/path-params-numeric-validations.md",
+          "section_anchor": "number-validations-greater-than-or-equal",
+          "score": 0.5724,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/path-params-numeric-validations.md::008",
+          "source": "tutorial/path-params-numeric-validations.md",
+          "section_anchor": "number-validations-greater-than-and-less-than-or-equal",
+          "score": 0.5521,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/path-params.md::001",
+          "source": "tutorial/path-params.md",
+          "section_anchor": "path-parameters-with-types",
+          "score": 0.5373,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/path-params-numeric-validations.md::003",
+          "source": "tutorial/path-params-numeric-validations.md",
+          "section_anchor": "order-the-parameters-as-you-need",
+          "score": 0.533,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 2,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 0.5,
+      "top1": 0.0
+    },
+    "test-08": {
+      "question": "I added a singular parameter importance next to two body models and FastAPI reads it from the query string. How do I make it part of the JSON body?",
+      "category": "troubleshooting",
+      "relevant": [
+        "tutorial/body-multiple-params.md#singular-values-in-body"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/body-multiple-params.md::004",
+          "source": "tutorial/body-multiple-params.md",
+          "section_anchor": "singular-values-in-body",
+          "score": 0.6475,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/body-multiple-params.md::003",
+          "source": "tutorial/body-multiple-params.md",
+          "section_anchor": "multiple-body-parameters",
+          "score": 0.6348,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/query-params.md::006",
+          "source": "tutorial/query-params.md",
+          "section_anchor": "required-query-parameters",
+          "score": 0.6025,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/body-multiple-params.md::007",
+          "source": "tutorial/body-multiple-params.md",
+          "section_anchor": "recap",
+          "score": 0.5851,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "index.md::012",
+          "source": "index.md",
+          "section_anchor": "check-it",
+          "score": 0.5779,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-09": {
+      "question": "If a path operation has both a return type annotation and a response_model, which one does FastAPI use?",
+      "category": "comparison",
+      "relevant": [
+        "tutorial/response-model.md#response-model-priority"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/response-model.md::004",
+          "source": "tutorial/response-model.md",
+          "section_anchor": "response-model-priority",
+          "score": 0.8042,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "advanced/additional-status-codes.md::000",
+          "source": "advanced/additional-status-codes.md",
+          "section_anchor": "additional-status-codes",
+          "score": 0.6994,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/response-model.md::018",
+          "source": "tutorial/response-model.md",
+          "section_anchor": "invalid-return-type-annotations",
+          "score": 0.677,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/response-model.md::010",
+          "source": "tutorial/response-model.md",
+          "section_anchor": "return-type-and-data-filtering",
+          "score": 0.6684,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/response-model.md::011",
+          "source": "tutorial/response-model.md",
+          "section_anchor": "return-type-and-data-filtering",
+          "score": 0.6614,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-10": {
+      "question": "How do I disable response model generation but keep the return type annotation for type checkers?",
+      "category": "direct",
+      "relevant": [
+        "tutorial/response-model.md#disable-response-model"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/response-model.md::010",
+          "source": "tutorial/response-model.md",
+          "section_anchor": "return-type-and-data-filtering",
+          "score": 0.585,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/response-model.md::009",
+          "source": "tutorial/response-model.md",
+          "section_anchor": "response-model-or-return-type",
+          "score": 0.5709,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/response-model.md::015",
+          "source": "tutorial/response-model.md",
+          "section_anchor": "other-return-type-annotations",
+          "score": 0.5603,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/response-model.md::019",
+          "source": "tutorial/response-model.md",
+          "section_anchor": "disable-response-model",
+          "score": 0.556,
+          "relevant": true
+        },
+        {
+          "rank": 5,
+          "chunk_id": "how-to/general.md::001",
+          "source": "how-to/general.md",
+          "section_anchor": "filter-data-security",
+          "score": 0.5485,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 4,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 0.25,
+      "top1": 0.0
+    },
+    "test-12": {
+      "question": "How can I customize the response that is returned when request validation fails?",
+      "category": "direct",
+      "relevant": [
+        "tutorial/handling-errors.md#override-request-validation-exceptions"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/handling-errors.md::001",
+          "source": "tutorial/handling-errors.md",
+          "section_anchor": "use-httpexception",
+          "score": 0.5807,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/handling-errors.md::007",
+          "source": "tutorial/handling-errors.md",
+          "section_anchor": "override-the-default-exception-handlers",
+          "score": 0.5482,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "advanced/response-change-status-code.md::001",
+          "source": "advanced/response-change-status-code.md",
+          "section_anchor": "use-case",
+          "score": 0.5481,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/handling-errors.md::009",
+          "source": "tutorial/handling-errors.md",
+          "section_anchor": "override-the-httpexception-error-handler",
+          "score": 0.5465,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/handling-errors.md::008",
+          "source": "tutorial/handling-errors.md",
+          "section_anchor": "override-request-validation-exceptions",
+          "score": 0.5311,
+          "relevant": true
+        }
+      ],
+      "first_relevant_rank": 5,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 0.2,
+      "top1": 0.0
+    },
+    "test-13": {
+      "question": "What is the downside of allowing all origins with the \"*\" wildcard in CORSMiddleware?",
+      "category": "troubleshooting",
+      "relevant": [
+        "tutorial/cors.md#wildcards"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/cors.md::003",
+          "source": "tutorial/cors.md",
+          "section_anchor": "wildcards",
+          "score": 0.5454,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/cors.md::001",
+          "source": "tutorial/cors.md",
+          "section_anchor": "origin",
+          "score": 0.4259,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/cors.md::005",
+          "source": "tutorial/cors.md",
+          "section_anchor": "use-corsmiddleware",
+          "score": 0.4257,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/cors.md::000",
+          "source": "tutorial/cors.md",
+          "section_anchor": "cors-cross-origin-resource-sharing",
+          "score": 0.4108,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "advanced/strict-content-type.md::001",
+          "source": "advanced/strict-content-type.md",
+          "section_anchor": "csrf-risk",
+          "score": 0.3602,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-14": {
+      "question": "What arguments does BackgroundTasks.add_task() take?",
+      "category": "direct",
+      "relevant": [
+        "tutorial/background-tasks.md#add-the-background-task"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/background-tasks.md::005",
+          "source": "tutorial/background-tasks.md",
+          "section_anchor": "technical-details",
+          "score": 0.6534,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/background-tasks.md::007",
+          "source": "tutorial/background-tasks.md",
+          "section_anchor": "recap",
+          "score": 0.6533,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/background-tasks.md::003",
+          "source": "tutorial/background-tasks.md",
+          "section_anchor": "add-the-background-task",
+          "score": 0.6248,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/background-tasks.md::004",
+          "source": "tutorial/background-tasks.md",
+          "section_anchor": "dependency-injection",
+          "score": 0.6163,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/background-tasks.md::001",
+          "source": "tutorial/background-tasks.md",
+          "section_anchor": "using-backgroundtasks",
+          "score": 0.6072,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 3,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 0.3333333333333333,
+      "top1": 0.0
+    },
+    "test-15": {
+      "question": "What is the difference between mounting a sub-application and including an APIRouter?",
+      "category": "comparison",
+      "relevant": [
+        "tutorial/static-files.md#what-is-mounting",
+        "advanced/sub-applications.md#sub-applications-mounts"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/static-files.md::002",
+          "source": "tutorial/static-files.md",
+          "section_anchor": "what-is-mounting",
+          "score": 0.6736,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "advanced/sub-applications.md::001",
+          "source": "advanced/sub-applications.md",
+          "section_anchor": "mounting-a-fastapi-application",
+          "score": 0.6548,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "advanced/sub-applications.md::000",
+          "source": "advanced/sub-applications.md",
+          "section_anchor": "sub-applications-mounts",
+          "score": 0.6324,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "advanced/sub-applications.md::006",
+          "source": "advanced/sub-applications.md",
+          "section_anchor": "technical-details-root-path",
+          "score": 0.6303,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "advanced/sub-applications.md::003",
+          "source": "advanced/sub-applications.md",
+          "section_anchor": "sub-application",
+          "score": 0.6174,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-16": {
+      "question": "How do I write a custom HTTP middleware in FastAPI?",
+      "category": "direct",
+      "relevant": [
+        "tutorial/middleware.md#create-a-middleware"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/middleware.md::001",
+          "source": "tutorial/middleware.md",
+          "section_anchor": "create-a-middleware",
+          "score": 0.7154,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "how-to/custom-request-and-route.md::000",
+          "source": "how-to/custom-request-and-route.md",
+          "section_anchor": "custom-request-and-apiroute-class",
+          "score": 0.6896,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "advanced/middleware.md::002",
+          "source": "advanced/middleware.md",
+          "section_anchor": "integrated-middlewares",
+          "score": 0.6541,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "advanced/middleware.md::003",
+          "source": "advanced/middleware.md",
+          "section_anchor": "httpsredirectmiddleware",
+          "score": 0.6283,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/cors.md::004",
+          "source": "tutorial/cors.md",
+          "section_anchor": "use-corsmiddleware",
+          "score": 0.621,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-17": {
+      "question": "Which attributes does an UploadFile object expose?",
+      "category": "direct",
+      "relevant": [
+        "tutorial/request-files.md#uploadfile"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/request-files.md::004",
+          "source": "tutorial/request-files.md",
+          "section_anchor": "uploadfile",
+          "score": 0.5437,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/request-form-models.md::008",
+          "source": "tutorial/request-form-models.md",
+          "section_anchor": "form-models-and-files",
+          "score": 0.4786,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/request-files.md::008",
+          "source": "tutorial/request-files.md",
+          "section_anchor": "uploadfile-with-additional-metadata",
+          "score": 0.4567,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/request-files.md::003",
+          "source": "tutorial/request-files.md",
+          "section_anchor": "file-parameters-with-uploadfile",
+          "score": 0.4502,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/request-files.md::001",
+          "source": "tutorial/request-files.md",
+          "section_anchor": "import-file",
+          "score": 0.4489,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-18": {
+      "question": "Why can I declare a header parameter as user_agent in Python and still receive the User-Agent header?",
+      "category": "troubleshooting",
+      "relevant": [
+        "tutorial/header-params.md#automatic-conversion"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/header-params.md::003",
+          "source": "tutorial/header-params.md",
+          "section_anchor": "automatic-conversion",
+          "score": 0.6889,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/header-params.md::002",
+          "source": "tutorial/header-params.md",
+          "section_anchor": "declare-header-parameters",
+          "score": 0.603,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/header-params.md::001",
+          "source": "tutorial/header-params.md",
+          "section_anchor": "import-header",
+          "score": 0.5377,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/header-param-models.md::003",
+          "source": "tutorial/header-param-models.md",
+          "section_anchor": "forbid-extra-headers",
+          "score": 0.4081,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/header-param-models.md::006",
+          "source": "tutorial/header-param-models.md",
+          "section_anchor": "optional-header-parameter-models",
+          "score": 0.4063,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-20": {
+      "question": "If I pass a lifespan parameter to FastAPI, what happens to startup and shutdown event handlers?",
+      "category": "direct",
+      "relevant": [
+        "advanced/events.md#alternative-events-deprecated"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "advanced/events.md::006",
+          "source": "advanced/events.md",
+          "section_anchor": "alternative-events-deprecated",
+          "score": 0.8034,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "advanced/events.md::009",
+          "source": "advanced/events.md",
+          "section_anchor": "startup-and-shutdown-together",
+          "score": 0.5858,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "advanced/events.md::010",
+          "source": "advanced/events.md",
+          "section_anchor": "technical-details",
+          "score": 0.5739,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "advanced/testing-events.md::001",
+          "source": "advanced/testing-events.md",
+          "section_anchor": "testing-events-lifespan-and-startup-shutdown",
+          "score": 0.5732,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "advanced/events.md::002",
+          "source": "advanced/events.md",
+          "section_anchor": "lifespan",
+          "score": 0.547,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-22": {
+      "question": "How do I set a default response class for all path operations of an app?",
+      "category": "direct",
+      "relevant": [
+        "advanced/custom-response.md#default-response-class"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "advanced/custom-response.md::017",
+          "source": "advanced/custom-response.md",
+          "section_anchor": "default-response-class",
+          "score": 0.5285,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "advanced/path-operation-advanced-configuration.md::004",
+          "source": "advanced/path-operation-advanced-configuration.md",
+          "section_anchor": "additional-responses",
+          "score": 0.4978,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/path-operation-configuration.md::008",
+          "source": "tutorial/path-operation-configuration.md",
+          "section_anchor": "recap",
+          "score": 0.4898,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/response-status-code.md::004",
+          "source": "tutorial/response-status-code.md",
+          "section_anchor": "changing-the-default",
+          "score": 0.489,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "advanced/response-change-status-code.md::000",
+          "source": "advanced/response-change-status-code.md",
+          "section_anchor": "response-change-status-code",
+          "score": 0.488,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-23": {
+      "question": "Can I put a Pydantic model directly into a JSONResponse, and if not, what should I use?",
+      "category": "troubleshooting",
+      "relevant": [
+        "advanced/response-directly.md#using-the-jsonable-encoder-in-a-response"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "advanced/response-directly.md::001",
+          "source": "advanced/response-directly.md",
+          "section_anchor": "return-a-response",
+          "score": 0.7678,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "advanced/custom-response.md::001",
+          "source": "advanced/custom-response.md",
+          "section_anchor": "json-responses",
+          "score": 0.689,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/body-fields.md::004",
+          "source": "tutorial/body-fields.md",
+          "section_anchor": "recap",
+          "score": 0.6523,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "how-to/general.md::002",
+          "source": "how-to/general.md",
+          "section_anchor": "optimize-response-performance-response-model-return-type",
+          "score": 0.6489,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "advanced/json-base64-bytes.md::003",
+          "source": "advanced/json-base64-bytes.md",
+          "section_anchor": "pydantic-bytes-for-output-data",
+          "score": 0.6417,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": null,
+      "hit_rate@5": 0.0,
+      "recall@5": 0.0,
+      "mrr@5": 0.0,
+      "top1": 0.0
+    },
+    "test-24": {
+      "question": "How do I enable GZip compression of responses and what parameters does the middleware accept?",
+      "category": "multi-step",
+      "relevant": [
+        "advanced/middleware.md#gzipmiddleware"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "advanced/middleware.md::005",
+          "source": "advanced/middleware.md",
+          "section_anchor": "gzipmiddleware",
+          "score": 0.6615,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "how-to/custom-request-and-route.md::003",
+          "source": "how-to/custom-request-and-route.md",
+          "section_anchor": "create-a-custom-gziprequest-class",
+          "score": 0.5119,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "how-to/custom-request-and-route.md::002",
+          "source": "how-to/custom-request-and-route.md",
+          "section_anchor": "handling-custom-request-body-encodings",
+          "score": 0.4894,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "how-to/custom-request-and-route.md::001",
+          "source": "how-to/custom-request-and-route.md",
+          "section_anchor": "use-cases",
+          "score": 0.4875,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "how-to/custom-request-and-route.md::004",
+          "source": "how-to/custom-request-and-route.md",
+          "section_anchor": "create-a-custom-gziproute-class",
+          "score": 0.3972,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-25": {
+      "question": "How do I hide a path operation from the generated OpenAPI schema?",
+      "category": "direct",
+      "relevant": [
+        "advanced/path-operation-advanced-configuration.md#exclude-from-openapi"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "how-to/general.md::006",
+          "source": "how-to/general.md",
+          "section_anchor": "documentation-deprecate-a-path-operation-openapi",
+          "score": 0.6873,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "advanced/path-operation-advanced-configuration.md::005",
+          "source": "advanced/path-operation-advanced-configuration.md",
+          "section_anchor": "openapi-extra",
+          "score": 0.6764,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "advanced/path-operation-advanced-configuration.md::002",
+          "source": "advanced/path-operation-advanced-configuration.md",
+          "section_anchor": "exclude-from-openapi",
+          "score": 0.6608,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/first-steps.md::007",
+          "source": "tutorial/first-steps.md",
+          "section_anchor": "api-schema",
+          "score": 0.6399,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "how-to/extending-openapi.md::000",
+          "source": "how-to/extending-openapi.md",
+          "section_anchor": "extending-openapi",
+          "score": 0.6005,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 3,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 0.3333333333333333,
+      "top1": 0.0
+    },
+    "test-26": {
+      "question": "How do I serve Swagger UI at a different URL and disable ReDoc?",
+      "category": "multi-step",
+      "relevant": [
+        "tutorial/metadata.md#docs-urls"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/metadata.md::010",
+          "source": "tutorial/metadata.md",
+          "section_anchor": "docs-urls",
+          "score": 0.6834,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "how-to/custom-docs-ui-assets.md::004",
+          "source": "how-to/custom-docs-ui-assets.md",
+          "section_anchor": "include-the-custom-docs",
+          "score": 0.6778,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "how-to/configure-swagger-ui.md::004",
+          "source": "how-to/configure-swagger-ui.md",
+          "section_anchor": "other-swagger-ui-parameters",
+          "score": 0.6566,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "how-to/configure-swagger-ui.md::000",
+          "source": "how-to/configure-swagger-ui.md",
+          "section_anchor": "configure-swagger-ui",
+          "score": 0.6484,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "how-to/custom-docs-ui-assets.md::002",
+          "source": "how-to/custom-docs-ui-assets.md",
+          "section_anchor": "disable-the-automatic-docs",
+          "score": 0.6319,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-27": {
+      "question": "Since FastAPI 0.122.0, which status code do the built-in security utilities return after a failed authentication, and what did they return before?",
+      "category": "comparison",
+      "relevant": [
+        "how-to/authentication-error-status-code.md#use-old-403-authentication-error-status-codes"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "advanced/additional-status-codes.md::000",
+          "source": "advanced/additional-status-codes.md",
+          "section_anchor": "additional-status-codes",
+          "score": 0.6041,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "how-to/authentication-error-status-code.md::000",
+          "source": "how-to/authentication-error-status-code.md",
+          "section_anchor": "use-old-403-authentication-error-status-codes",
+          "score": 0.5735,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "advanced/additional-status-codes.md::003",
+          "source": "advanced/additional-status-codes.md",
+          "section_anchor": "openapi-and-api-docs",
+          "score": 0.553,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/security/index.md::008",
+          "source": "tutorial/security/index.md",
+          "section_anchor": "fastapi-utilities",
+          "score": 0.5414,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "deployment/versions.md::002",
+          "source": "deployment/versions.md",
+          "section_anchor": "available-versions",
+          "score": 0.5211,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 2,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 0.5,
+      "top1": 0.0
+    },
+    "test-28": {
+      "question": "How can I turn off the OpenAPI schema and docs UIs in production using an environment variable?",
+      "category": "multi-step",
+      "relevant": [
+        "how-to/conditional-openapi.md#conditional-openapi-from-settings-and-env-vars"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "how-to/conditional-openapi.md::000",
+          "source": "how-to/conditional-openapi.md",
+          "section_anchor": "conditional-openapi",
+          "score": 0.6165,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/metadata.md::009",
+          "source": "tutorial/metadata.md",
+          "section_anchor": "openapi-url",
+          "score": 0.598,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "how-to/separate-openapi-schemas.md::009",
+          "source": "how-to/separate-openapi-schemas.md",
+          "section_anchor": "same-schema-for-input-and-output-models-in-docs",
+          "score": 0.5707,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "how-to/conditional-openapi.md::001",
+          "source": "how-to/conditional-openapi.md",
+          "section_anchor": "about-security-apis-and-docs",
+          "score": 0.556,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "how-to/general.md::006",
+          "source": "how-to/general.md",
+          "section_anchor": "documentation-deprecate-a-path-operation-openapi",
+          "score": 0.5528,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": null,
+      "hit_rate@5": 0.0,
+      "recall@5": 0.0,
+      "mrr@5": 0.0,
+      "top1": 0.0
+    },
+    "test-29": {
+      "question": "When should I write a path operation function with async def instead of plain def?",
+      "category": "multi-step",
+      "relevant": [
+        "async.md#in-a-hurry"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "async.md::000",
+          "source": "async.md",
+          "section_anchor": "concurrency-and-async-await",
+          "score": 0.6974,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "async.md::028",
+          "source": "async.md",
+          "section_anchor": "path-operation-functions",
+          "score": 0.6815,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/dependencies/index.md::009",
+          "source": "tutorial/dependencies/index.md",
+          "section_anchor": "to-async-or-not-to-async",
+          "score": 0.6347,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "async.md::001",
+          "source": "async.md",
+          "section_anchor": "in-a-hurry",
+          "score": 0.6047,
+          "relevant": true
+        },
+        {
+          "rank": 5,
+          "chunk_id": "async.md::002",
+          "source": "async.md",
+          "section_anchor": "in-a-hurry",
+          "score": 0.5955,
+          "relevant": true
+        }
+      ],
+      "first_relevant_rank": 4,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 0.25,
+      "top1": 0.0
+    },
+    "test-30": {
+      "question": "Which ASGI servers does the deployment documentation list for running FastAPI?",
+      "category": "direct",
+      "relevant": [
+        "deployment/manually.md#asgi-servers"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "deployment/manually.md::001",
+          "source": "deployment/manually.md",
+          "section_anchor": "asgi-servers",
+          "score": 0.686,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "deployment/manually.md::003",
+          "source": "deployment/manually.md",
+          "section_anchor": "install-the-server-program",
+          "score": 0.6666,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "deployment/cloud.md::001",
+          "source": "deployment/cloud.md",
+          "section_anchor": "fastapi-cloud",
+          "score": 0.6128,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "deployment/fastapicloud.md::003",
+          "source": "deployment/fastapicloud.md",
+          "section_anchor": "deploy-your-own-server",
+          "score": 0.5959,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "deployment/fastapicloud.md::001",
+          "source": "deployment/fastapicloud.md",
+          "section_anchor": "about-fastapi-cloud",
+          "score": 0.5869,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-31": {
+      "question": "How long are Let's Encrypt certificates valid?",
+      "category": "direct",
+      "relevant": [
+        "deployment/https.md#lets-encrypt",
+        "deployment/https.md#certificate-renewal"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "deployment/https.md::003",
+          "source": "deployment/https.md",
+          "section_anchor": "lets-encrypt",
+          "score": 0.5699,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "deployment/https.md::015",
+          "source": "deployment/https.md",
+          "section_anchor": "certificate-renewal",
+          "score": 0.44,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "deployment/concepts.md::001",
+          "source": "deployment/concepts.md",
+          "section_anchor": "security-https",
+          "score": 0.3904,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "deployment/https.md::009",
+          "source": "deployment/https.md",
+          "section_anchor": "tls-with-sni-extension",
+          "score": 0.3431,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "deployment/https.md::016",
+          "source": "deployment/https.md",
+          "section_anchor": "certificate-renewal",
+          "score": 0.3422,
+          "relevant": true
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-32": {
+      "question": "How do I include an existing Flask (WSGI) app inside a FastAPI app?",
+      "category": "direct",
+      "relevant": [
+        "advanced/wsgi.md#using-wsgimiddleware"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "advanced/wsgi.md::001",
+          "source": "advanced/wsgi.md",
+          "section_anchor": "using-wsgimiddleware",
+          "score": 0.7977,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "advanced/wsgi.md::002",
+          "source": "advanced/wsgi.md",
+          "section_anchor": "check-it",
+          "score": 0.6929,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "advanced/wsgi.md::000",
+          "source": "advanced/wsgi.md",
+          "section_anchor": "including-wsgi-flask-django-others",
+          "score": 0.6925,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/frontend.md::001",
+          "source": "tutorial/frontend.md",
+          "section_anchor": "serve-a-frontend",
+          "score": 0.6553,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fastapi-cli.md::002",
+          "source": "fastapi-cli.md",
+          "section_anchor": "configure-the-app-entrypoint-in-pyproject-toml",
+          "score": 0.6528,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-33": {
+      "question": "If several dependencies share the same sub-dependency, how many times is it called per request, and how can I change that?",
+      "category": "multi-step",
+      "relevant": [
+        "tutorial/dependencies/sub-dependencies.md#using-the-same-dependency-multiple-times"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/dependencies/sub-dependencies.md::004",
+          "source": "tutorial/dependencies/sub-dependencies.md",
+          "section_anchor": "using-the-same-dependency-multiple-times",
+          "score": 0.6271,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/dependencies/global-dependencies.md::001",
+          "source": "tutorial/dependencies/global-dependencies.md",
+          "section_anchor": "dependencies-for-groups-of-path-operations",
+          "score": 0.5191,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/dependencies/dependencies-in-path-operation-decorators.md::006",
+          "source": "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+          "section_anchor": "dependencies-for-a-group-of-path-operations",
+          "score": 0.5057,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/dependencies/sub-dependencies.md::000",
+          "source": "tutorial/dependencies/sub-dependencies.md",
+          "section_anchor": "sub-dependencies",
+          "score": 0.476,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/bigger-applications.md::009",
+          "source": "tutorial/bigger-applications.md",
+          "section_anchor": "another-module-with-apirouter",
+          "score": 0.4378,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    },
+    "test-34": {
+      "question": "How do I apply a partial update with PATCH so that fields the client did not send keep their stored values?",
+      "category": "multi-step",
+      "relevant": [
+        "tutorial/body-updates.md#using-pydantics-exclude-unset-parameter",
+        "tutorial/body-updates.md#partial-updates-with-patch"
+      ],
+      "top": [
+        {
+          "rank": 1,
+          "chunk_id": "tutorial/body-updates.md::002",
+          "source": "tutorial/body-updates.md",
+          "section_anchor": "partial-updates-with-patch",
+          "score": 0.6093,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "tutorial/body-updates.md::005",
+          "source": "tutorial/body-updates.md",
+          "section_anchor": "partial-updates-recap",
+          "score": 0.5102,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "tutorial/body-updates.md::003",
+          "source": "tutorial/body-updates.md",
+          "section_anchor": "using-pydantics-exclude-unset-parameter",
+          "score": 0.4329,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "tutorial/sql-databases.md::039",
+          "source": "tutorial/sql-databases.md",
+          "section_anchor": "update-a-hero-with-heroupdate",
+          "score": 0.4244,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "tutorial/body-updates.md::006",
+          "source": "tutorial/body-updates.md",
+          "section_anchor": "partial-updates-recap",
+          "score": 0.4014,
+          "relevant": false
+        }
+      ],
+      "first_relevant_rank": 1,
+      "hit_rate@5": 1.0,
+      "recall@5": 1.0,
+      "mrr@5": 1.0,
+      "top1": 1.0
+    }
+  }
+}

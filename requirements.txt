@@ -1,0 +1,15 @@
+# Core (CPU is enough). Install PyTorch CPU wheels first to avoid the large CUDA download:
+#   pip install --index-url https://download.pytorch.org/whl/cpu torch
+numpy>=1.26
+torch>=2.2
+transformers>=4.40
+sentence-transformers>=3.0
+sentencepiece>=0.2
+
+# Development / evaluation
+pytest>=8
+matplotlib>=3.8
+
+# Optional local API + demo page (server/ and client/)
+fastapi>=0.110
+uvicorn[standard]>=0.29

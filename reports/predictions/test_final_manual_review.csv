@@ -1,0 +1,135 @@
+id,answerability,question,expected_answer_points,answer,citations,correct,complete,evidence_supported,citations_valid,abstention_ok,error_type,notes
+test-01,answerable,How do I make a query parameter required?,Do not declare a default value for it,"To make a query parameter required, you can either not declare a default value or specify a valid value.",tutorial/query-params.md#required-query-parameters,0.5,1,0.5,1,1,unsupported claim,"adds 'or specify a valid value', which the docs do not say"
+test-02,answerable,"How do I declare a path parameter that itself contains a path with slashes, such as a file path?","Use the :path convertor from Starlette, e.g. /files/{file_path:path}",I could not find enough evidence in the FastAPI documentation to answer this question.,,0,0,0,,0,false abstention (hallucination caught),model omitted the :path convertor and wrote {file_path}; support gate abstained
+test-03,answerable,"The client sends a query parameter named item-query, which is not a valid Python name. How do I read it?","Declare an alias in Query, e.g. alias=""item-query""","You should read the parameter by its alias, which is ""item_query"".",tutorial/query-params-str-validations.md#alias-parameters,0,0,0.5,0.5,1,incorrect claim,says the alias is item_query; docs: alias='item-query' is the external name
+test-04,answerable,"How can one query parameter receive several values, like ?q=foo&q=bar?","Declare the parameter with a list type | You must use Query explicitly, otherwise it would be interpreted as a request body","One can query parameter `q` receive several values, such as `?q=foo&q=bar`.",tutorial/query-params-str-validations.md#query-parameter-list-multiple-values,0,0,1,1,1,non-answer,restates the question; never says 'list' or 'Query'
+test-05,answerable,How do I mark a query parameter as deprecated in the API docs without removing it?,Pass deprecated=True to Query,"To mark a query parameter as deprecated in the API docs without removing it, you should pass the parameter `deprecated=True`.",tutorial/path-operation-configuration.md#deprecate-a-path-operation,1,1,1,0.5,1,citation error,answer right; cites deprecate-a-path-operation instead of the Query section
+test-06,answerable,How do I pin the FastAPI version in a requirements.txt file?,"Specify an exact version with ==, or a range such as >=0.112.0,<0.113.0","To pin the FastAPI version in a requirements.txt file, follow these steps:
+
+1. Identify the FastAPI version you want to use.
+2. Open the requirements.txt file in your preferred text editor.
+3. Locate the line that specifies the FastAPI version (e.g., `fastapi==0.112.0`).
+4. Add the following line at the end of the file:
+   ```
+   fastapi==latest_version
+   ```
+5. Replace `latest_version` with the actual version number you want to use.
+6. Save the changes to the requirements.txt file.
+
+By doing so, you ensure that",deployment/versions.md#pin-your-fastapi-version; deployment/versions.md#about-versions; deployment/docker.md#dockerfile,0.5,0.5,0.5,0.5,1,unsupported claim,== is right; invents 'fastapi==latest_version' steps; two extra citations
+test-07,answerable,How do I require a path parameter item_id to be an integer greater than or equal to 1?,Use Path with ge=1,I could not find enough evidence in the FastAPI documentation to answer this question.,,0,0,0,,0,false abstention (hallucination caught),model invented 'gte' (docs: ge); support gate abstained
+test-08,answerable,I added a singular parameter importance next to two body models and FastAPI reads it from the query string. How do I make it part of the JSON body?,Singular values are assumed to be query parameters | Declare it with Body to make it a body key,"To make the singular value ""importance"" part of the JSON body, you need to modify the definition of the `Body` parameter in your FastAPI route. Specifically, you should change the declaration of the `Body` parameter to include the new key-value pair where the value is the name of the new key. Here's how you can achieve this:
+
+```python
+from fastapi import APIRouter, Depends
+
+router = APIRouter()
+
+@router.post(""/your-endpoint"", response_model=YourModel)
+async def your_endpoint(body: YourModel = Depends(get_body), user: User = Depends(get_user)):
+    # Your existing",tutorial/body-multiple-params.md#singular-values-in-body,0.5,0.5,0.5,1,1,unsupported claim,"names Body, then invents Depends-based code"
+test-09,answerable,"If a path operation has both a return type annotation and a response_model, which one does FastAPI use?",response_model takes priority,FastAPI uses the response_model parameter when both a return type annotation and a response_model exist.,advanced/dataclasses.md#dataclasses-in-nested-data-structures,1,1,1,0,1,citation error,correct answer mapped to the dataclasses passage (lexical overlap)
+test-10,answerable,How do I disable response model generation but keep the return type annotation for type checkers?,Set response_model=None on the path operation,"To disable response model generation while keeping the return type annotation for type checkers, you can set `response_model=None`. This allows FastAPI to handle the data validation and documentation independently, ensuring that the tooling supports the expected types.",tutorial/response-model.md#disable-response-model,1,1,0.5,1,1,-,second sentence is filler
+test-12,answerable,How can I customize the response that is returned when request validation fails?,Register an exception handler for RequestValidationError with @app.exception_handler(RequestValidationError) | The handler receives the Request and the exception,"To customize the response that is returned when request validation fails in FastAPI, you can use the `HTTPException` class from the FastAPI framework. This allows you to define custom error responses based on specific conditions met during the request processing.",tutorial/handling-errors.md#override-request-validation-exceptions,0,0,0,0,1,incorrect claim,HTTPException instead of a RequestValidationError handler; cited section does not support it
+test-13,answerable,"What is the downside of allowing all origins with the ""*"" wildcard in CORSMiddleware?",It excludes anything involving credentials such as cookies and Authorization headers,I could not find enough evidence in the FastAPI documentation to answer this question.,,0,0,0,,0,false abstention (hallucination caught),invented denial-of-service reasoning; support gate abstained
+test-14,answerable,What arguments does BackgroundTasks.add_task() take?,A task function | Positional arguments passed to it in order | Keyword arguments passed to it,BackgroundTasks.add_task() takes two main arguments: a task function to be run in the background (`write_notification`) and any sequence of arguments that should be passed to the task function in order (`email`).,tutorial/background-tasks.md#add-the-background-task,1,0.5,1,1,1,incomplete,omits keyword arguments
+test-15,answerable,What is the difference between mounting a sub-application and including an APIRouter?,A mounted application is completely independent | The main app's OpenAPI schema and docs do not include anything from the mounted application,"Mounting a sub-application adds a completely independent application in a specific path, which handles all sub-paths independently. In contrast, including an APIRouter mounts it within the main application's context, allowing for full integration with the main application's functionality.",tutorial/static-files.md#what-is-mounting,0.5,0.5,0.5,1,1,unsupported claim,first sentence right; the APIRouter sentence is invented
+test-16,answerable,How do I write a custom HTTP middleware in FastAPI?,"Decorate a function with @app.middleware(""http"") | It receives the request and call_next, and can modify the response","To write a custom HTTP middleware in FastAPI, you should follow these steps:
+
+1. **Create a new class**: Define a new class that inherits from `FastAPIMiddleware`. For example:
+   ```python
+   from fastapi import FastAPI
+
+   class CustomHTTPMiddleware(FastAPIMiddleware):
+       async def __call__(self, request, call_next):
+           # Your custom logic here
+           response = await call_next(request)
+           return response
+   ```
+
+2. **Register the middleware**: Register this new middleware with your FastAPI application. Typically, you would place this code inside an initializer method like `__init",tutorial/middleware.md#create-a-middleware,0,0,0,0,1,incorrect claim,invents a FastAPIMiddleware base class; keyword proxy false positive
+test-17,answerable,Which attributes does an UploadFile object expose?,filename | content_type | file (a SpooledTemporaryFile),"An UploadFile object exposes the following attributes:
+
+- filename: The original file name that was uploaded.
+- content_type: The MIME type of the uploaded file.
+- file: An instance of SpooledTemporaryFile representing the actual file object.",tutorial/request-files.md#uploadfile,1,1,1,1,1,-,
+test-18,answerable,Why can I declare a header parameter as user_agent in Python and still receive the User-Agent header?,Header converts underscores to hyphens automatically | HTTP headers are case-insensitive | Disable with convert_underscores=False,I could not find enough evidence in the FastAPI documentation to answer this question.,,0,0,0,,0,false abstention (hallucination caught),nonsense about immutable strings; support gate abstained
+test-20,answerable,"If I pass a lifespan parameter to FastAPI, what happens to startup and shutdown event handlers?","They are no longer called: it is all lifespan or all events, not both","If you pass a lifespan parameter to FastAPI, the `startup` and `shutdown` event handlers are no longer called. Instead, they are handled by the lifecycle of the FastAPI application itself.",advanced/events.md#alternative-events-deprecated,1,1,0.5,1,1,-,second sentence vague but harmless
+test-22,answerable,How do I set a default response class for all path operations of an app?,Use the default_response_class parameter when creating FastAPI or APIRouter,"To set a default response class for all path operations of an app, you should define a `default_response_class` parameter in your `FastAPI` class definition. This allows the app to automatically choose the appropriate response class based on the request method and route.",advanced/custom-response.md#default-response-class; how-to/custom-request-and-route.md#custom-apiroute-class-in-a-router,1,1,0.5,0.5,1,unsupported claim,parameter right; invents 'based on the request method'; second citation irrelevant
+test-23,answerable,"Can I put a Pydantic model directly into a JSONResponse, and if not, what should I use?",No: convert it first with jsonable_encoder,"Yes, you can put a Pydantic model directly into a JSONResponse. However, if you don't declare a response model, FastAPI will use the `jsonable_encoder` to encode the data, filter out Pydantic models, and pass it to the `JSONResponse`.",advanced/custom-response.md#json-responses; advanced/response-directly.md#using-the-jsonable-encoder-in-a-response,0,0,0.5,0.5,1,incorrect claim,says 'Yes' where the docs say you cannot; keyword proxy false positive
+test-24,answerable,How do I enable GZip compression of responses and what parameters does the middleware accept?,"Add GZipMiddleware | minimum_size (default 500 bytes) | compresslevel (1-9, default 9)","To enable GZip compression of responses, you would typically configure your middleware to include the `gzip` header in the response headers. The specific configuration might look like this:
+
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.middleware(""http"")
+async def add_gzip_header(request: FastAPIRequest, call_next):
+    # Add gzip header to the response
+    response = await call_next(request)
+    
+    # Optionally, compress the response (e.g., gzip)
+    response.headers[""Content-Encoding""] = ""gzip""
+    
+    return response
+```
+
+In this example, the middleware adds the `Content",advanced/middleware.md#gzipmiddleware; how-to/custom-request-and-route.md#create-a-custom-gziprequest-class,0,0,0,0,1,incorrect claim,invents a header-setting middleware; never names GZipMiddleware
+test-25,answerable,How do I hide a path operation from the generated OpenAPI schema?,Set include_in_schema=False,"To hide a path operation from the generated OpenAPI schema, you can use the `include_in_schema` parameter of the `path_operation_exclude_from_openapi` parameter in FastAPI's configuration. Set this parameter to `False`.",advanced/path-operation-advanced-configuration.md#exclude-from-openapi,0.5,1,0.5,1,1,unsupported claim,include_in_schema=False right; invented parameter name around it
+test-26,answerable,How do I serve Swagger UI at a different URL and disable ReDoc?,Set docs_url to the new path | Set redoc_url=None,"To serve Swagger UI at a different URL and disable ReDoc, follow these steps:
+
+1. Set the `docs_url` parameter in the Swagger UI configuration to point to the desired URL.
+2. Set the `redoc_url` parameter in the ReDoc configuration to also point to this new URL.
+3. Configure your FastAPI application to use the custom CDN URLs provided by ReDoc.
+
+Here’s an example of how you might achieve this:
+
+### Step 1: Modify the Swagger UI Configuration
+
+Update the `docs_url` parameter in the `tutorial/metadata.md` excerpt to point to the desired URL for the Swagger UI:",tutorial/metadata.md#docs-urls; how-to/custom-docs-ui-assets.md#disable-the-automatic-docs,0.5,0.5,0.5,0.5,1,incorrect claim,docs_url right; redoc_url=None wrong; CDN steps invented
+test-27,answerable,"Since FastAPI 0.122.0, which status code do the built-in security utilities return after a failed authentication, and what did they return before?",401 Unauthorized now (with a WWW-Authenticate header) | 403 Forbidden before 0.122.0,"Since FastAPI 0.122.0, the built-in security utilities return an HTTP status code 403 (Forbidden) after a failed authentication. Before FastAPI version `0.122.0`, they used the HTTP status code 401 (Unauthorized).",how-to/authentication-error-status-code.md#use-old-403-authentication-error-status-codes,0,0,0.5,1,1,incorrect claim,swaps 401 and 403; keyword proxy false positive (both numbers present)
+test-28,answerable,How can I turn off the OpenAPI schema and docs UIs in production using an environment variable?,Read openapi_url from Pydantic settings and pass it to FastAPI | Set the OPENAPI_URL environment variable to an empty string; /docs then returns 404,"To turn off the OpenAPI schema and docs UIs in production using an environment variable, follow these steps:
+
+1. Set the OPENAPI_URL environment variable to an empty string.
+2. Go to the URLs at `/openapi.json`, `/docs`, or `/redoc`.
+3. You'll receive a 404 Not Found error indicating that the requested resources are inaccessible due to missing documentation.",how-to/conditional-openapi.md#conditional-openapi-from-settings-and-env-vars,1,0.5,1,1,1,incomplete,omits reading openapi_url from Pydantic settings
+test-29,answerable,When should I write a path operation function with async def instead of plain def?,"Use async def when you call libraries with await | Use def when the library does not support await (most database libraries) | If unsure, use def","To avoid blocking the server, especially on slow networks, prefer using async def over plain def.",async.md#path-operation-functions,0,0,0.5,1,1,incorrect claim + ranking,'prefer async def' contradicts the TL;DR; the in-a-hurry section was not in the top 3
+test-30,answerable,Which ASGI servers does the deployment documentation list for running FastAPI?,"Uvicorn (the default in the fastapi command) | Hypercorn, Daphne, Granian","Uvicorn, Hypercorn, Daphne, and Granian.",deployment/manually.md#asgi-servers,1,1,1,1,1,-,
+test-31,answerable,How long are Let's Encrypt certificates valid?,About 3 months,"These **HTTPS certificates** are **short-lived**, lasting about 3 months.",deployment/https.md#lets-encrypt,1,1,1,1,1,-,
+test-32,answerable,How do I include an existing Flask (WSGI) app inside a FastAPI app?,Wrap it with WSGIMiddleware from a2wsgi and mount it under a path | fastapi.middleware.wsgi is deprecated,"To include an existing Flask (WSGI) app inside a FastAPI app, you should follow these steps:
+
+1. Ensure you have the `a2wsgi` package installed.
+2. Import `WSGIMiddleware` from `a2wsgi`.
+3. Wrap the WSGI (Flask) app with the middleware.
+4. Mount the WSGI app under a specific path in your FastAPI app.
+
+Here’s how you can do this:
+
+```python
+from fastapi import FastAPI
+from a2wsgi import WSGIMiddleware
+
+app = FastAPI()
+
+# Step 1: Install a",advanced/wsgi.md#using-wsgimiddleware,1,0.5,1,1,1,incomplete,omits the deprecation note (minor)
+test-33,answerable,"If several dependencies share the same sub-dependency, how many times is it called per request, and how can I change that?",Only once per request; the value is cached | Set use_cache=False in Depends to call it every time,"One time per request. To change this behavior, you should set the parameter `use_cache=False` when using `Depends`.",tutorial/dependencies/sub-dependencies.md#using-the-same-dependency-multiple-times,1,1,1,1,1,-,
+test-34,answerable,How do I apply a partial update with PATCH so that fields the client did not send keep their stored values?,Use item.model_dump(exclude_unset=True) to get only the fields that were sent,"To apply a partial update with PATCH so that fields the client did not send keep their stored values, follow these steps:
+
+1. Retrieve the stored data.
+2. Update the data using the `dict` without default values from the input model.
+3. Create a copy of the stored model, updating its attributes with the received partial updates.
+4. Convert the copied model to something that can be stored in your database (e.g., JSON).
+5. Save the data to your database.
+6. Return the updated model.",tutorial/body-updates.md#partial-updates-recap,0.5,0,0.5,0.5,1,ranking error + incomplete,exclude_unset section not in the top 3; generic steps instead
+test-ie-01,insufficient_evidence,What is the default maximum request body size that FastAPI accepts?,Not documented in the corpus; the system should abstain,FastAPI accepts a maximum request body size of 5MB.,tutorial/handling-errors.md#use-the-requestvalidationerror-body,0,0,0,0,0,failure to abstain,invents a 5 MB limit and cites an unrelated passage
+test-ie-02,insufficient_evidence,"Does FastAPI support HTTP/3, and how do I enable it?",HTTP/3 is not mentioned; the system should abstain,"FastAPI does not currently support HTTP/3. To enable it, you can update your FastAPI version to 0.128.0 or later, which supports HTTP/3.",tutorial/path-params.md#data-conversion; how-to/migrate-from-pydantic-v1-to-pydantic-v2.md#migrate-from-pydantic-v1-to-pydantic-v2,0,0,0,0,0,failure to abstain,invents HTTP/3 support 'in 0.128.0'
+test-ie-03,insufficient_evidence,How do I export FastAPI request metrics to Prometheus?,Prometheus is not mentioned; the system should abstain,"To export FastAPI request metrics to Prometheus, follow these steps:
+
+1. Set up FastAPI to use OTLP (OpenTelemetry) by configuring the `FastAPI_OTEL_AUTO_CONFIGURE` environment variable.
+2. Configure the OTLP exporter in your FastAPI application by setting `OTEL_EXPORTER_OTLP_HEADERS` to include necessary headers.
+3. Deploy your FastAPI application to FastAPI Cloud with `fastapi[standard]`.
+4. In FastAPI Cloud, enable metrics by adding the `metrics` field to your API routes.
+5. Export metrics from FastAPI Cloud to Prometheus by creating a new Prometheus instance and",advanced/opentelemetry.md#other-monitoring-services; advanced/opentelemetry.md#run-the-app; advanced/opentelemetry.md#fastapi-cloud,0,0,0,0,0,failure to abstain,invents OTLP/Prometheus steps from the OpenTelemetry page
+test-ie-04,insufficient_evidence,How do I expose a gRPC service from a FastAPI application?,gRPC is not mentioned; the system should abstain,I could not find enough evidence in the FastAPI documentation to answer this question.,,,,,,1,-,abstained: 0/6 sentences supported
+test-ie-05,insufficient_evidence,How do I cache responses in memcached with FastAPI?,memcached is not mentioned; the system should abstain,I could not find enough evidence in the FastAPI documentation to answer this question.,,,,,,1,-,abstained: retrievers disagree on the top passage

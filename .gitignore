@@ -1,0 +1,37 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python caches and build output
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Secrets and local settings (never commit tokens)
+.env
+.env.*
+*.token
+*.key
+
+# Generated artifacts (rebuilt by `python -m docqa index`)
+artifacts/
+# Model downloads if a local HF cache is pointed here
+models/
+.cache/
+
+# Experiment scratch output (keep the summarised reports under reports/)
+reports/experiments/raw/
+data/processed/experiments/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Downloaded documentation checkout used by scripts/fetch_docs.sh
+.fastapi_checkout/
