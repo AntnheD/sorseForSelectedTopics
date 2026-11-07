@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FastAPI Docs Q&A</title>
+  <style>
+    :root { --bg: #ffffff; --fg: #1f2933; --muted: #52606d; --line: #d9e2ec; --accent: #1a73e8; --warn: #b45309; --card: #f5f7fa; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0f1419; --fg: #e6edf3; --muted: #9fb0c0; --line: #2b3a49; --accent: #7cb3ff; --warn: #f5b96b; --card: #171f28; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 24px 16px; background: var(--bg); color: var(--fg); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    main { max-width: 860px; margin: 0 auto; }
+    h1 { font-size: 1.5rem; margin: 0 0 4px; }
+    .sub { color: var(--muted); margin: 0 0 20px; }
+    form { display: flex; gap: 8px; flex-wrap: wrap; }
+    input { flex: 1 1 320px; padding: 10px 12px; font-size: 1rem; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--fg); }
+    button { padding: 10px 16px; font-size: 1rem; border: 0; border-radius: 8px; background: var(--accent); color: #fff; cursor: pointer; }
+    button[disabled] { opacity: .6; cursor: wait; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin-top: 16px; }
+    .answer { font-size: 1.05rem; white-space: pre-wrap; }
+    .abstain { color: var(--warn); }
+    .muted { color: var(--muted); font-size: .9rem; }
+    ol { padding-left: 20px; }
+    details { margin-top: 10px; }
+    pre { white-space: pre-wrap; font-size: .85rem; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px; }
+    .ok { color: #15803d; } .bad { color: var(--warn); }
+  </style>
+</head>
+<body>
+<main>
+  <h1>FastAPI Documentation Q&amp;A</h1>
+  <p class="sub">Grounded answers with citations from the FastAPI docs. The system abstains when the retrieved evidence is weak.</p>
+  <form id="f">
+    <input id="q" placeholder="e.g. How do I make a query parameter optional?" required>
+    <button id="b" type="submit">Ask</button>
+  </form>
+  <div id="out"></div>
+</main>
+<script>
+  const f = document.getElementById('f'), q = document.getElementById('q'), b = document.getElementById('b'), out = document.getElementById('out');
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  f.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    b.disabled = true; out.innerHTML = '<div class="card muted">Retrieving and generating…</div>';
+    try {
+      const r = await fetch('/ask', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({question: q.value})});
+      const d = await r.json();
+      if (!r.ok) { out.innerHTML = `<div class="card bad">${esc(d.detail || r.statusText)}</div>`; return; }
+      const cites = d.citations.length
+        ? `<h3>Sources</h3><ol>${d.citations.map(c => `<li><code>${esc(c.source)}</code> § ${esc(c.section)} <span class="muted">(support ${c.support.toFixed(2)})</span></li>`).join('')}</ol>`
+        : `<p class="muted">No citations${d.abstained ? '' : ' (no sentence reached the support threshold)'}.</p>`;
+      const sents = d.sentences.map(s => `<li class="${s.supported ? 'ok' : 'bad'}">${s.supported ? '✓' : '✗'} ${s.support.toFixed(2)} — ${esc(s.sentence)}</li>`).join('');
+      const pass = d.passages.map(p => `<li><code>${esc(p.chunk_id)}</code> <span class="muted">score ${p.score.toFixed(3)}</span><pre>${esc(p.text.slice(0, 600))}${p.text.length > 600 ? '…' : ''}</pre></li>`).join('');
+      out.innerHTML = `
+        <div class="card">
+          <div class="answer ${d.abstained ? 'abstain' : ''}">${esc(d.answer)}</div>
+          ${d.abstained ? `<p class="muted">Abstained: ${esc(d.abstain_reason)}</p>` : ''}
+          ${cites}
+          <p class="muted">${esc(d.retriever)} · ${esc(d.generator)} (${esc(d.model)}) · retrieval ${d.timings.retrieval.toFixed(2)}s · generation ${d.timings.generation.toFixed(2)}s</p>
+          <details><summary>Debug: raw model output, sentence support, retrieved passages</summary>
+            <pre>${esc(d.raw_answer || '(no generation: abstained before the model was called)')}</pre>
+            <ul>${sents}</ul><ol>${pass}</ol>
+          </details>
+        </div>`;
+    } catch (err) { out.innerHTML = `<div class="card bad">Request failed: ${esc(err)}</div>`; }
+    finally { b.disabled = false; }
+  });
+</script>
+</body>
+</html>
